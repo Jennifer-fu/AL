@@ -20,7 +20,7 @@ public class BinaryHeap {
         }
     }
 
-    private void heapify(int[] array, int i, int heapSize) {
+    public void heapify(int[] array, int i, int heapSize) {
         int min = i;
         int left = i * 2 + 1;
         int right = i * 2 + 2;
