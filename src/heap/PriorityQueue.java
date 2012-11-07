@@ -49,11 +49,10 @@ public class PriorityQueue {
     }
 
     public int[] insert(int[] heap, int key){
-        int[] newArray = new int[heap.length + 1];
-        System.arraycopy(heap,0,newArray,0,heap.length);
-        newArray[heap.length] = Integer.MAX_VALUE;
-        decreaseKey(newArray,heap.length,key);
-        return newArray;
+        heap = Arrays.copyOf(heap, heap.length + 1);
+        heap[heap.length - 1] = Integer.MAX_VALUE;
+        decreaseKey(heap,heap.length - 1,key);
+        return heap;
     }
 
     private void swap(int[] array, int a, int b) {
